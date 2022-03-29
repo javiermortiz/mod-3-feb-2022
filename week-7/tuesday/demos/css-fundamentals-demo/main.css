@@ -8,6 +8,9 @@ Show some of the generic font families: serif, sans-serif, monospace, cursive, a
     font-family: serif;
 }
 
+#main-title {
+    color: blue;
+}
 /* Make the body tag have light gray background */
 body {
     background-color: lightgray;
@@ -45,19 +48,26 @@ button:hover {
 }
 
 /* Which one has more specificity id or tag + class */
-div.a-div {
+.a-div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+.a-div {
     width: 100px;
     height: 100px;
     background-color: blue;
     border-radius: 50%;
 }
 
-#a-div {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    border-radius: 50%;
-}
+
 
 
 /* 
@@ -71,7 +81,7 @@ text transform uppercase
 h2 {
     font-size: 5rem;
     font-weight: bold;
-    color: rgba(0,0,0, .8);
+    color: #000000;
     text-transform: uppercase;
 }
 
@@ -83,7 +93,7 @@ h3 {
 }
 
 h4 {
-    font-size: .5rem;
+    font-size: 1rem;
     font-weight: bold;
     color: rgba(0,0,0, .2);
     text-transform: lowercase;
