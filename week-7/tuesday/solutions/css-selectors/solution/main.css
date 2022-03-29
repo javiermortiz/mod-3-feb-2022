@@ -2,7 +2,7 @@
 
 /* Phase 1 */
 #page-title {
-    font-weight: bold;
+    font-weight:bolder;
 }
 
 /* Phase 2 */
@@ -13,11 +13,11 @@
 }
 
 /* Phase 3 */
-p {
+/* p {
     margin-top: .75em;
     margin-bottom: .75em;
     text-align: justify;
-}
+} */
 
 pre {
     margin: 100px auto;
@@ -25,7 +25,7 @@ pre {
 }
 
 /* Phase 4 */
-a:link {
+a {
     text-decoration: none;
 }
 
@@ -47,8 +47,17 @@ pre > a {
     text-indent: 0em;
 }
 
+
+
 body > p {
     text-indent: 1em;
+    margin-top: .75em;
+    margin-bottom: .75em;
+    text-align: justify;
+}
+
+p {
+    text-align: center;
 }
 
 h1, h2, h3 {
