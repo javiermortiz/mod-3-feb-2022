@@ -15,6 +15,16 @@ nav > ul {
     gap: 10px;
 }
 
+main img {
+    display: block;
+}
+
+@media screen and (min-width: 601px) and (max-width: 821px) {
+    body {
+        background-color: red;
+    }
+    
+}
 @media screen and (max-width: 600px) {
     nav > ul {
         flex-direction: column;
@@ -36,6 +46,9 @@ nav > ul {
 
     h1 {
         text-align: center;
+    }
+     img {
+        display: none;
     }
 }
 

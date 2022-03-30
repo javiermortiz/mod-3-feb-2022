@@ -22,7 +22,7 @@ html, body, div {
 
     /* Bonus Phase */
     /*!!START */
-    grid-gap: 15px 0;
+    grid-gap: 15px 0px;
     /*!!END */
 }
 .item-1 {
