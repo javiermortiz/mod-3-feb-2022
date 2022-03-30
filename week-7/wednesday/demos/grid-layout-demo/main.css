@@ -9,65 +9,67 @@ themselves so they actually overlap and layer, similar to CSS positioned element
 
 .wrapper {
   display: grid;
+  /* grid-template-columns: 33% 33% 33%; */
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 100px);
-  gap: 10px;
-  /* grid-template-areas:
-    "a b b"
-    "c b b"
-    "c . d"
-    "c e f"; */
+  gap: 10px 20px;
+  grid-template-areas:
+    "logo contact contact"
+    "sb contact contact"
+    "sb z d"
+    "sb e f";
 }
 
 .one {
-  grid-column: 1 / 3;
-  grid-row: 1;
-  /* grid-area: a; */
+  /* grid-column: 1 / 3;
+  grid-row: 1; */
+  grid-area: logo;
+  z-index: 1;
   background-color: pink;
   border: 1px solid red;
   border-radius: 5px;
 }
 
 .two {
-  grid-column: 2 / 4;
-  grid-row: 1 / 3;
-  /* grid-area: b; */
+  /* grid-column: 2 / 4;
+  grid-row: 1 / 3; */
+  grid-area: contact;
   background-color: pink;
   border: 1px solid red;
   border-radius: 5px;
 }
 
 .three {
-  grid-column: 1;
-  grid-row: 2 / 5;
-  /* grid-area: c; */
+  /* grid-column: 1;
+  grid-row: 2 / 5; */
+  grid-area: sb;
   background-color: pink;
   border: 1px solid red;
   border-radius: 5px;
 }
 
 .four {
-  grid-column: 3;
-  grid-row: 3;
-  /* grid-area: d; */
+  /* grid-column: 3;
+  grid-row: 3; */
+  grid-area: d;
   background-color: pink;
   border: 1px solid red;
   border-radius: 5px;
 }
 
 .five {
-  grid-column: 2;
-  grid-row: 4;
-  /* grid-area: e; */
+  /* grid-column: 2;
+  grid-row: 4; */
+  grid-area: e;
   background-color: pink;
   border: 1px solid red;
   border-radius: 5px;
 }
 
 .six {
-  grid-column: 3;
-  grid-row: 4;
-  /* grid-area: f; */
+  /* grid-column: 3;
+  grid-row: 4; */
+  grid-area: f;
   background-color: pink;
   border: 1px solid red;
   border-radius: 5px;
