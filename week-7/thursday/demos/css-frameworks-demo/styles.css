@@ -1,0 +1,13 @@
+.border-red {
+    border: 1px solid red;
+}
+
+.button {
+    border-radius: 5px;
+    border: 1px solid white;
+
+}
+
+.button:hover {
+    background-color: lightgray;
+}

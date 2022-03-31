@@ -49,19 +49,20 @@
     /*/* Your animation here */
     /*!!END_ADD */
     /*!!START SILENT */
-    animation: spin 2s linear infinite;
+    
     /*!!END */
 }
 
-@keyframes spin {
-    /*!!ADD */
-    /*/* Set up your keyframe animation here */
-    /*!!END_ADD */
-    /*!!START SILENT */
-    from {
-        transform: rotate(0deg);
-    } to {
-        transform: rotate(360deg);
-    }
-    /*!!END */
+.earth_svg:hover {
+    animation: slidein 2s linear infinite;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
 }
