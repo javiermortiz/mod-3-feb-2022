@@ -1,11 +1,24 @@
 const http = require('http');
 const fs = require("fs");
 
+
+// const myObj = {
+//     req: 'request',
+//     res: 'res',
+//     createServer: function (req, res) {
+//         req = this.req;
+//         res = this.res;
+//         console.log(req, res)
+//     }
+// }
+
+
 let database = [];
 const server = http.createServer((req, res) => {
     console.log(`${req.method} ${req.url}`);
         
-    if (req.method === "GET" && req.url === "/") {
+    console.log(req['headers']);
+    if (req.method === "GET" && req.url === "/tasks/new") {
         const htmlPage = fs.readFileSync("index.html", "utf-8");
         const tasksList = database.map(task => {
             return `<li>${task["tasks"]} - ${task["time"]}</li>`
@@ -17,7 +30,14 @@ const server = http.createServer((req, res) => {
         return res.end(resBody);
     }
 
-    if (req.method === "GET" && req.url === "/main.css") {
+    if (req.method === "GET" && req.url === "/bananas") {
+        const htmlPage = fs.readFileSync("contact.html", "utf-8");
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "text/html");
+        return res.end(htmlPage);
+    }
+
+    if (req.method === "GET" && req.url === "/tasks/main.css") {
         const resBody = fs.readFileSync("main.css");
         res.statusCode = 200;
         res.setHeader("Content-Type", "text/css");
