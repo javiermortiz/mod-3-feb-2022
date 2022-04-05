@@ -1,17 +1,14 @@
 const http = require('http');
+const fs = require('fs');
 
 const server = http.createServer((req, res) => {
     console.log(`${req.method} ${req.url}`);
     if (req.method === 'GET' && req.url === '/') {
+        const htmlPage = fs.readFileSync('index.html', 'utf-8');
+        console.log(htmlPage);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/html');
-        return res.end('Dog Club');
-    }
-    
-    if (req.method === 'GET' && req.url === '/posts') {
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/html');
-        return res.end('<h1>Posts page</h1>');
+        return res.end(htmlPage);
     }
 
     res.statusCode = 404;
