@@ -19,10 +19,11 @@ function getContentType(fileName) {
 const Cat = require("./cat");
 const Dog = require("./dog");
 
-let cat;
-let dog;
 
+let dog;
+let cat;
 const server = http.createServer((req, res) => {
+  
   console.log(`${req.method} ${req.url}`);
 
   if (req.method === "GET" && req.url.startsWith('/assets')) {
@@ -106,11 +107,16 @@ const server = http.createServer((req, res) => {
       console.log(req.body);
     }
 
+    // if (method && url)
+    // cat = new Cat()
+
+
     //!!START
     if (req.method === "POST" && req.url === "/cat") {
+      console.log(req.body);
       const { name, pattern, size, description } = req.body;
 
-      cat = new Cat({ name, pattern, size, description });
+      cat = new Cat(req.body);
       res.statusCode = 302;
       res.setHeader("Location", "/");
       res.end();
@@ -119,7 +125,10 @@ const server = http.createServer((req, res) => {
 
     if (req.method === "POST" && req.url === "/dog") {
       const { name, color, age, description } = req.body;
-
+      const myDog = {
+        name: name,
+        color: color,
+      }
       dog = new Dog({ name, color, age, description });
       res.statusCode = 302;
       res.setHeader("Location", "/");
