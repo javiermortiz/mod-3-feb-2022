@@ -114,7 +114,7 @@ Comment in each invocation of your workout function below and run the file
     // Error:  you dont have enough time to lift weights
 
 
-// workout(4000);
+workout(4000);
   // should print out the following:
   //   done stretching
   //   done running on treadmill
