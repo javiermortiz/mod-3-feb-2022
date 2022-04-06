@@ -75,11 +75,15 @@ function workout(totalTime) {
   // // refactor your code from phase 1
   //!!END_ADD
   //!!START
+  // 2000
   stretch(totalTime)
+  // 1000
     .then(timeLeftAfterStretching => runOnTreadmill(timeLeftAfterStretching))
+  // 500
     .then(timeLeftAfterRunning => liftWeights(timeLeftAfterRunning))
     .then(res => console.log(`done working out with ${res/1000} seconds left`))
-    .catch(err => console.log('Error: ', err));
+    .catch(err => console.log('Error: ', err))
+    
   //!!END
 }
 
@@ -101,7 +105,7 @@ Comment in each invocation of your workout function below and run the file
     // Error:  you dont have enough time to run on treadmill
 
 
-// workout(2000);
+workout(2000);
   // should print out the following:
     // done stretching
     // done running on treadmill
