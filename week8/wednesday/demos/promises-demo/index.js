@@ -117,7 +117,7 @@ function openingCrawlChain(time) {
                      from a hidden base, have won
                      their first victory against
                      the evil Galactic Empire.`);
-            return wait(time);
+            return wait;
         })
         .then((phrase) => {
             console.log(phrase);
