@@ -97,6 +97,7 @@ new Promise((res, rej) => {
 function wait(ms, arg) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
+            console.log('hello');
             resolve();
         }, ms);
     });
