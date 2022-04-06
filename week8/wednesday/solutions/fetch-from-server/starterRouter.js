@@ -33,9 +33,9 @@ function htmlRouter(req, res) {
     // When the request is finished processing the entire body
     req.on("end", () => {
       // Parsing the body of the request
-      // if (req['headers']['Content-Type'] === "application/x-www-form-urlencoded") {
+      if (req['headers']['Content-Type'] === "application/x-www-form-urlencoded") {
 
-      // }
+      }
       if (reqBody) {
         req.body = reqBody
           .split("&")
