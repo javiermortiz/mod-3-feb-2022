@@ -6,15 +6,18 @@ document.addEventListener("DOMContentLoaded", async ev => {
 
 async function fetchPosts() {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    // let text = await res.text();
     let data = await res.json();
+    // console.log(text);
+    console.log(data);
     data = data.slice(0, 10);
-    console.log({
-        statusCode: res.status,
-        headers: {
-            "Content-Type": res.headers.get("Content-Type")
-        },
-        body: data
-    });
+    // console.log({
+    //     statusCode: res.status,
+    //     headers: {
+    //         "Content-Type": res.headers.get("Content-Type")
+    //     },
+    //     body: data
+    // });
     const postsContainer = document.querySelector(".posts-list");
     const lis = data.map(post => `
         <div class="post">
