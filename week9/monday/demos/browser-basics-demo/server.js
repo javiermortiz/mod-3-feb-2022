@@ -3,7 +3,7 @@ const fs = require("fs");
 
 const server = http.createServer((req, res) => {
     console.log(`${req.method} ${req.url}`);
-        
+    console.log('inside the server');
     if (req.method === "GET" && req.url === "/") {
         const resBody = fs.readFileSync("index.html", "utf-8");
         res.statusCode = 200;
@@ -27,6 +27,13 @@ const server = http.createServer((req, res) => {
 
     if (req.method === "GET" && req.url === "/seedData.js") {
         const resBody = fs.readFileSync("seedData.js");
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "text/javascript");
+        return res.end(resBody);
+    }
+
+    if (req.method === "GET" && req.url === "/secondImport.js") {
+        const resBody = fs.readFileSync("secondImport.js");
         res.statusCode = 200;
         res.setHeader("Content-Type", "text/javascript");
         return res.end(resBody);
