@@ -10,28 +10,51 @@ add.addEventListener("click", async () => {
         // URL of new dog image
         const url = data.message;
 
+        let breed = url.split('/')
+        breed = breed[breed.length - 2];
+        
+        // const dog = `<li><figure><img src=${url}><figcaption>${breed}</figcaption></figure></li>`
+        const figcaption = document.createElement('figcaption');
+        const img = document.createElement('img');
+        const figure = document.createElement('figure');
+        const li = document.createElement('li');
+        figure.append(img);
+        figure.append(figcaption);
+        li.append(figure);
+        img.src = url;
+        figcaption.innerText = breed;
+        const list = document.querySelector('ul');
+        list.append(li);
+
+
+
+
+
+
+
+
         // Get breed (Hint: Parse from URL)
-        const breed = url.split('/')[4];
+        // const breed = url.split('/')[4];
 
-        // Create element to inject 
-        const newDog = document.createElement("li");
+        // // Create element to inject 
+        // const newDog = document.createElement("li");
 
-        const newFigure = document.createElement("figure");
+        // const newFigure = document.createElement("figure");
 
-        const newImg = document.createElement("img");
-        newImg.src = url;
+        // const newImg = document.createElement("img");
+        // newImg.src = url;
 
-        const newCaption = document.createElement("figcaption");
-        newCaption.innerText = breed;
+        // const newCaption = document.createElement("figcaption");
+        // newCaption.innerText = breed;
 
-        newFigure.appendChild(newImg);
-        newFigure.appendChild(newCaption);
+        // newFigure.appendChild(newImg);
+        // newFigure.appendChild(newCaption);
 
-        newDog.appendChild(newFigure);
+        // newDog.appendChild(newFigure);
 
-        // Inject element into correct location
-        const ul = document.getElementsByTagName("ul")[0];
-        ul.appendChild(newDog);
+        // // Inject element into correct location
+        // const ul = document.getElementsByTagName("ul")[0];
+        // ul.appendChild(newDog);
 
     } catch (e) {
         console.log("Couldn't fetch dog :(")
