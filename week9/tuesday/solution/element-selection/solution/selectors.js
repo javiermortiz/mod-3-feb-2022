@@ -20,10 +20,10 @@ const select = () => {
 
     // Get all odd number list items in the list
     const odds = document.getElementsByClassName("odd");
-
+    
     // Get all even number list items in the list
     const evens = Array.from(document.querySelectorAll("#two > ol > li")).filter(node => node.className !== "odd");
-
+    document.querySelectorAll('ol > li:not(.odd)')
     /* PART 3 */
     // Get all tech companies without a class name
     const nameless = document.querySelector("a");
