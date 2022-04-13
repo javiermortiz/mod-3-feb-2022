@@ -5,11 +5,12 @@ window.addEventListener("DOMContentLoaded", () => {
     // PART 1
     const redInput = document.getElementById("red-input");
     const changeRed = e => {
+        console.log('input event!');
         let value = e.target.value.trim().toLowerCase();
         if (value === "red") {
             redInput.style.backgroundColor = "red";
         } else {
-            redInput.style.backgroundColor = "transparent";
+            redInput.style.backgroundColor = "";
         }
     }
 
@@ -18,7 +19,11 @@ window.addEventListener("DOMContentLoaded", () => {
     // PART 2
     const addItem = document.getElementById("add-item");
     const ul = document.querySelector("#part-2 > ul");
-    const addLi = e => {
+    
+
+    addItem.addEventListener("click", addLi);
+
+    function addLi (e) {
         const input = document.querySelector("#list-add")
         const value = input.value;
         const newLi = document.createElement("li");
@@ -27,11 +32,10 @@ window.addEventListener("DOMContentLoaded", () => {
         input.value = '';
     };
 
-    addItem.addEventListener("click", addLi);
-
     // PART 3
     const colorSelect = document.getElementById("color-select");
     const changeColor = e => {
+        console.log('change event!');
         const section = document.getElementById("part-3");
         section.style.backgroundColor = e.target.value;
     }
